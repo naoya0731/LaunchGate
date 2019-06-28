@@ -81,7 +81,17 @@ class DialogManager {
   }
 
   func topViewController() -> UIViewController? {
-    return UIApplication.shared.keyWindow?.rootViewController
+    if let rootViewController = UIApplication.shared.keyWindow?.rootViewController {
+        var topViewControlelr: UIViewController = rootViewController
+        
+        while let presentedViewController = topViewControlelr.presentedViewController {
+            topViewControlelr = presentedViewController
+        }
+        
+        return topViewControlelr
+    } else {
+        return nil
+    }
   }
 
   // MARK: Custom Alert Actions
