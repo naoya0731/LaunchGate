@@ -80,6 +80,7 @@ class DialogManager {
     }
   }
 
+  // Naoya Fix
   func topViewController() -> UIViewController? {
     if let rootViewController = UIApplication.shared.keyWindow?.rootViewController {
         var topViewController: UIViewController = rootViewController
